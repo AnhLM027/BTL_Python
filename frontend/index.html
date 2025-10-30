@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GenConViT Deepfake Detector</title>
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎥 GenConViT Deepfake Detector</h1>
+        <p>Tải lên video và phát hiện deepfake trong thời gian thực.</p>
+
+        <form id="uploadForm">
+            <input type="file" id="videoInput" accept="video/*" required>
+            <button type="submit">Tải lên</button>
+        </form>
+
+        <div id="loading" class="loading">⏳ Đang tải lên...</div>
+
+        <div id="preview" class="preview">
+            <h3>🎞️ Video đã tải lên</h3>
+            <video id="uploadedVideo" controls></video>
+            <button id="detectBtn">Phát hiện Deepfake</button>
+        </div>
+
+        <div id="detecting" class="detecting">⏳ Đang phân tích video...</div>
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
