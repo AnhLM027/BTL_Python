@@ -80,7 +80,7 @@ def normalize_data():
     }
 
 
-def load_data(data_dir="Dataset/", batch_size=16):
+def load_data(data_dir="dataset/", batch_size=16):
     data_dir = data_dir
     image_datasets = {
         x: datasets.ImageFolder(os.path.join(data_dir, x), normalize_data()[x])

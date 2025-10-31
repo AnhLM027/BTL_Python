@@ -42,7 +42,6 @@ def vids(
             print(f"An error occurred: {str(e)}")
         return result
 
-    # Nếu root_dir là thư mục → xử lý nhiều video
     for filename in os.listdir(root_dir):
         curr_vid = os.path.join(root_dir, filename)
         try:
