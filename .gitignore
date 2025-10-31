@@ -1,0 +1,22 @@
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+
+# === IDEs ===
+.vscode/
+.idea/
+
+# === Data / Outputs ===
+*.pt
+*.pth
+*.h5
+*.ckpt
+*.onnx
+*.npy
+*.npz
+*.csv
+*.mp4
+*.avi
