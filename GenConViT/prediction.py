@@ -9,7 +9,7 @@ from model.config import load_config
 config = load_config()
 
 def vids(
-    ed_weight, vae_weight, root_dir="sample_prediction_data", dataset=None, num_frames=15, net=None, fp16=False
+    ed_weight, vae_weight, root_dir="dataset", dataset=None, num_frames=15, net=None, fp16=False
 ):
     result = set_result()
     r = 0
