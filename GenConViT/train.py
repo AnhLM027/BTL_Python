@@ -72,7 +72,7 @@ def train_model(
         train_loss, train_acc, epoch_loss = train(
             model,
             device,
-            dataloaders["train"],
+            dataloaders["Train"],
             criterion,
             optimizer,
             epoch,
@@ -83,7 +83,7 @@ def train_model(
         valid_loss, valid_acc = valid(
             model,
             device,
-            dataloaders["validation"],
+            dataloaders["Validation"],
             criterion,
             epoch,
             valid_loss,
@@ -135,7 +135,7 @@ def test(model, dataloaders, dataset_sizes, mod, weight):
 
     Sum = 0
     counter = 0
-    for inputs, labels in dataloaders["test"]:
+    for inputs, labels in dataloaders["Test"]:
         inputs = inputs.to(device)
         labels = labels.to(device)
         if mod == "ed":
@@ -154,7 +154,7 @@ def test(model, dataloaders, dataset_sizes, mod, weight):
         print(f"Pediction: {Sum}/{len(inputs)*counter}")
 
     print(
-        f'Prediction: {Sum}/{dataset_sizes["test"]} {(Sum / dataset_sizes["test"]) * 100:.2f}%'
+        f'Prediction: {Sum}/{dataset_sizes["Test"]} {(Sum / dataset_sizes["Test"]) * 100:.2f}%'
     )
 
 

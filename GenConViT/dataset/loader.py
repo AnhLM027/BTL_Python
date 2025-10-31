@@ -64,45 +64,47 @@ def normalize_data():
     mean = [0.485, 0.456, 0.406]
     std = [0.229, 0.224, 0.225]
 
+    resize = transforms.Resize((224, 224))
+
     return {
-        "train": transforms.Compose(
-            [Aug(), transforms.ToTensor(), transforms.Normalize(mean, std)]
+        "Train": transforms.Compose(
+            [Aug(), resize, transforms.ToTensor(), transforms.Normalize(mean, std)]
         ),
-        "valid": transforms.Compose(
-            [transforms.ToTensor(), transforms.Normalize(mean, std)]
+        "Validation": transforms.Compose(
+            [resize, transforms.ToTensor(), transforms.Normalize(mean, std)]
         ),
-        "test": transforms.Compose(
-            [transforms.ToTensor(), transforms.Normalize(mean, std)]
+        "Test": transforms.Compose(
+            [resize, transforms.ToTensor(), transforms.Normalize(mean, std)]
         ),
-        "vid": transforms.Compose([transforms.Normalize(mean, std)]),
+        # "Vid": transforms.Compose([resize, transforms.Normalize(mean, std)]),
     }
 
 
-def load_data(data_dir="sample/", batch_size=4):
+def load_data(data_dir="Dataset/", batch_size=16):
     data_dir = data_dir
     image_datasets = {
         x: datasets.ImageFolder(os.path.join(data_dir, x), normalize_data()[x])
-        for x in ["train", "valid", "test"]
+        for x in ["Train", "Validation", "Test"]
     }
 
-    dataset_sizes = {x: len(image_datasets[x]) for x in ["train", "valid", "test"]}
+    dataset_sizes = {x: len(image_datasets[x]) for x in ["Train", "Validation", "Test"]}
 
     train_dataloaders = torch.utils.data.DataLoader(
-        image_datasets["train"],
+        image_datasets["Train"],
         batch_size,
         shuffle=True,
         num_workers=0,
         pin_memory=True,
     )
     validation_dataloaders = torch.utils.data.DataLoader(
-        image_datasets["valid"],
+        image_datasets["Validation"],
         batch_size,
         shuffle=False,
         num_workers=0,
         pin_memory=True,
     )
     test_dataloaders = torch.utils.data.DataLoader(
-        image_datasets["test"],
+        image_datasets["Test"],
         batch_size,
         shuffle=False,
         num_workers=0,
@@ -110,9 +112,9 @@ def load_data(data_dir="sample/", batch_size=4):
     )
 
     dataloaders = {
-        "train": train_dataloaders,
-        "validation": validation_dataloaders,
-        "test": test_dataloaders,
+        "Train": train_dataloaders,
+        "Validation": validation_dataloaders,
+        "Test": test_dataloaders,
     }
 
     return dataloaders, dataset_sizes

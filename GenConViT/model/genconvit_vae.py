@@ -2,10 +2,8 @@ import torch
 import torch.nn as nn
 from torchvision import transforms
 from timm import create_model
-from GenConViT.model.config import load_config
 from .model_embedder import HybridEmbed
 
-config = load_config()
 
 class Encoder(nn.Module):
 
