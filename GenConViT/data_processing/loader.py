@@ -76,7 +76,7 @@ def normalize_data():
         "Test": transforms.Compose(
             [resize, transforms.ToTensor(), transforms.Normalize(mean, std)]
         ),
-        # "Vid": transforms.Compose([resize, transforms.Normalize(mean, std)]),
+        "vid": transforms.Compose([resize, transforms.Normalize(mean, std)]),
     }
 
 
