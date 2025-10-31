@@ -55,6 +55,14 @@ Hệ thống phát hiện video Deepfake điển hình, dựa trên **GenConViT*
 ### 🔧 Các bước triển khai
 
 1. Trích khung hình, phát hiện khuôn mặt, resize 224x224 px
+   
+   * Extract frames:
+
+   <img src="frame.jpg" width="320"/> 
+   
+   * Crop face:
+   
+   <img src="face.jpg" width="320"/>
 2. Thiết kế mô hình:
 
    * Encoder CNN (ResNet/ConvNeXt)
@@ -188,7 +196,7 @@ uvicorn backend.main:app --host 0.0.0.0 --port 9000
 
 ## 👥 Tác giả
 
-**Lê Minh Anh** – PTIT
+**Lê Minh Anh**\
+**Nguyễn Thị Thu Hoài**
 
 > Dự án: *Hệ thống phát hiện video Deepfake dựa trên mô hình GenConViT (Generative Convolutional Vision Transformer)*
-MIT License © 2025 AnhLM027
