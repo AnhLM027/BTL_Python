@@ -114,6 +114,7 @@ Video_Deepfake_Detection/
 │   ├── __init__.py
 │   ├── main.py
 │   └── uploads
+│       └── *.mp4
 ├── frontend
 │   ├── favicon.svg
 │   ├── index.html
@@ -121,8 +122,19 @@ Video_Deepfake_Detection/
 │   └── style.css
 ├── GenConViT
 │   ├── dataset
+│   │   ├── extract_face.py
 │   │   ├── __init__.py
 │   │   └── loader.py
+│   ├── Dataset
+│   │   ├── Test
+│   │   │   ├── Real
+│   │   │   └── Fake
+│   │   ├── Train
+│   │   │   ├── Real
+│   │   │   └── Fake
+│   │   └── Validation
+│   │       ├── Real
+│   │       └── Fake
 │   ├── __init__.py
 │   ├── model
 │   │   ├── config.py
@@ -140,7 +152,11 @@ Video_Deepfake_Detection/
 │   │   ├── __init__.py
 │   │   ├── train_ed.py
 │   │   └── train_vae.py
-│   └── train.py
+│   ├── train.py
+│   └── weight
+│       ├── genconvit_ed_inference.pth
+│       └── genconvit_vae_inference.pth
+├── README.md
 └── scripts.sh
 ```
 
@@ -154,6 +170,16 @@ Video_Deepfake_Detection/
 git clone https://github.com/AnhLM027/BTL_Python.git Video_Deepfake_Detection
 cd Video_Deepfake_Detection
 pip install -r requirements.txt
+```
+### Train model
+```bash
+python train.py --d Dataset --m ed --e 5 -t y
+python train.py --d Dataset --m vae --e 5 -t y
+```
+
+### Predict
+```bash
+python prediction.py --p test.mp4 --e --v --f 10
 ```
 
 ### Chạy backend (FastAPI)
