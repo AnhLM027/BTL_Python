@@ -10,7 +10,7 @@ import pickle
 from model.config import load_config
 from model.genconvit_ed import GenConViTED
 from model.genconvit_vae import GenConViTVAE
-from dataset_processing.loader import load_data, load_checkpoint
+from data_processing.loader import load_data, load_checkpoint
 import optparse
 
 config = load_config()

@@ -6,7 +6,7 @@ import dlib
 import face_recognition
 from torchvision import transforms
 from tqdm import tqdm
-from GenConViT.dataset_processing.loader import normalize_data
+from GenConViT.data_processing.loader import normalize_data
 from .config import load_config
 from .genconvit import GenConViT
 from decord import VideoReader, cpu

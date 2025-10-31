@@ -1,4 +1,4 @@
-# 🧠 GenConViT - Deepfake Video Detection System
+# GenConViT - Deepfake Video Detection System
 
 GenConViT (**Generative Convolutional Vision Transformer**) là một mô hình học sâu được thiết kế cho bài toán **phát hiện video Deepfake**, kết hợp giữa mạng sinh (VAE/Autoencoder) và Vision Transformer để khai thác đồng thời **đặc trưng không gian** và **biểu diễn tiềm ẩn thời gian** trong video.
 
@@ -121,11 +121,11 @@ Video_Deepfake_Detection/
 │   ├── script.js
 │   └── style.css
 ├── GenConViT
-│   ├── dataset
+│   ├── data_processing
 │   │   ├── extract_face.py
 │   │   ├── __init__.py
 │   │   └── loader.py
-│   ├── Dataset
+│   ├── dataset
 │   │   ├── Test
 │   │   │   ├── Real
 │   │   │   └── Fake
